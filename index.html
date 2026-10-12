@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thế Giới Di Động - Điện thoại, Laptop, Phụ kiện chính hãng</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="top-banner-strip">
+        🔥 Siêu hội Laptop & Điện thoại - Giảm ngay đến 50% + Trả góp 0% qua MB Bank
+    </div>
+
+    <header>
+        <div class="container header-wrap">
+            <a href="index.html" class="logo-tgdd">
+                thegioididong <span>.com</span>
+            </a>
+
+            <button class="location-btn">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Hà Nội <i class="fa-solid fa-caret-down"></i></span>
+            </button>
+
+            <div class="search-box-wrap">
+                <input type="text" id="searchInput" placeholder="Bạn tìm gì: MacBook Air M2, Asus Vivobook, Dell Inspiron..." onkeyup="if(event.key === 'Enter') handleSearch()">
+                <button onclick="handleSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="header-links">
+                <a href="#" class="head-link-item">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>Lịch sử<br>đơn hàng</span>
+                </a>
+                <a href="cart.html" class="cart-head-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Giỏ hàng</span>
+                    <span class="cart-count-badge" id="cartCount">0</span>
+                </a>
+                <div id="authHeaderContainer">
+                    <a href="login.html" class="head-link-item" style="color:#d0021b;">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-menu-nav">
+        <div class="container menu-wrap">
+            <a href="index.html" class="menu-item active"><i class="fa-solid fa-mobile-screen-button"></i> Điện thoại</a>
+            <a href="#" class="menu-item" onclick="filterByCategory('Laptop'); return false;"><i class="fa-solid fa-laptop"></i> Laptop</a>
+            <a href="#" class="menu-item" onclick="filterByCategory('PC Gaming'); return false;"><i class="fa-solid fa-desktop"></i> PC Gaming</a>
+            <a href="#" class="menu-item" onclick="filterByCategory('Màn hình'); return false;"><i class="fa-solid fa-tv"></i> Màn hình</a>
+            <a href="#" class="menu-item" onclick="filterByCategory('Gear'); return false;"><i class="fa-solid fa-keyboard"></i> Phụ kiện & Gear</a>
+            <a href="admin.html" class="menu-item"><i class="fa-solid fa-user-gear"></i> Quản trị</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <div class="filter-section">
+            <div class="filter-title">
+                <i class="fa-solid fa-filter" style="color: #288ad6;"></i> BỘ LỌC TÌM KIẾM SẢN PHẨM
+            </div>
+            <div class="filter-options">
+                <select id="brandFilter" class="filter-select" onchange="applyFilters()">
+                    <option value="all">Tất cả thương hiệu</option>
+                    <option value="Apple">Apple (MacBook)</option>
+                    <option value="ASUS">ASUS</option>
+                    <option value="Dell">Dell</option>
+                    <option value="Acer">Acer</option>
+                    <option value="Lenovo">Lenovo</option>
+                    <option value="Logitech">Logitech</option>
+                    <option value="Razer">Razer</option>
+                    <option value="Keychron">Keychron</option>
+                </select>
+                <select id="priceFilter" class="filter-select" onchange="applyFilters()">
+                    <option value="all">Tất cả mức giá</option>
+                    <option value="under15">Dưới 15 triệu</option>
+                    <option value="15to25">Từ 15 - 25 triệu</option>
+                    <option value="over25">Trên 25 triệu</option>
+                </select>
+                <select id="sortFilter" class="filter-select" onchange="applyFilters()">
+                    <option value="default">Sắp xếp: Mặc định</option>
+                    <option value="priceAsc">Giá từ thấp đến cao</option>
+                    <option value="priceDesc">Giá từ cao xuống thấp</option>
+                    <option value="discount">% Giảm giá nhiều nhất</option>
+                </select>
+            </div>
+        </div>
+
+        
+        <div class="product-grid-container" id="dynamicProductsGrid"></div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-cols">
+                <div>
+                    <h4>Tổng đài hỗ trợ (Miễn phí)</h4>
+                    <ul>
+                        <li>Gọi mua: 1800.1060 (7:30 - 22:00)</li>
+                        <li>Khiếu nại: 1800.1062 (8:00 - 21:30)</li>
+                        <li>Bảo hành: 1800.1064 (8:00 - 21:00)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Về công ty</h4>
+                    <ul>
+                        <li>Giới thiệu công ty (MWG.vn)</li>
+                        <li>Tuyển dụng làm việc</li>
+                        <li>Gửi góp ý, khiếu nại</li>
+                        <li>Tìm siêu thị (3.140 shop)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Thông tin chính sách</h4>
+                    <ul>
+                        <li>Chính sách bảo hành</li>
+                        <li>Chính sách đổi trả</li>
+                        <li>Giao hàng & Lắp đặt</li>
+                        <li>Hướng dẫn mua trả góp</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Thanh toán hỗ trợ</h4>
+                    <ul>
+                        <li>Ngân hàng MB Bank (STK: 002603939)</li>
+                        <li>Ví điện tử VietQR 247</li>
+                        <li>Thẻ Visa, Mastercard, JCB</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                © 2026. Công ty cổ phần Thế Giới Di Động. GPĐKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2007.
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast-msg">Đã thêm vào giỏ hàng thành công!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

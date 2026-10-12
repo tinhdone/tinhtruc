@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Quản Trị Admin - Thế Giới Di Động</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body onload="initAdmin()">
+
+    <header>
+        <div class="container header-wrap">
+            <a href="index.html" class="logo-tgdd">
+                thegioididong <span>.com ADMIN</span>
+            </a>
+            <div class="header-links">
+                <a href="index.html" class="head-link-item"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                <button onclick="logoutUser()" style="background:none; border:none; color:#333; font-weight:bold; cursor:pointer;"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-wrapper">
+        <aside class="admin-sidebar">
+            <ul class="admin-menu">
+                <li><a href="#" class="active" onclick="switchTab('dashboard')"><i class="fa-solid fa-chart-line"></i> Tổng quan</a></li>
+                <li><a href="#" onclick="switchTab('orders')"><i class="fa-solid fa-file-invoice"></i> Đơn hàng</a></li>
+                <li><a href="#" onclick="switchTab('products')"><i class="fa-solid fa-box"></i> Sản phẩm (60)</a></li>
+                <li><a href="#" onclick="switchTab('users')"><i class="fa-solid fa-users"></i> Khách hàng</a></li>
+            </ul>
+        </aside>
+
+        <main class="admin-main">
+            <div id="tab-dashboard" class="admin-tab-content active">
+                <h2 style="font-size:18px; font-weight:bold; margin-bottom:20px;">TỔNG QUAN HỆ THỐNG</h2>
+                <div class="admin-stats-grid">
+                    <div class="stat-card">
+                        <h3>Đơn hàng mới</h3>
+                        <p class="stat-number">128</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Doanh thu tháng</h3>
+                        <p class="stat-number" style="color:#d0021b;">850.450.000₫</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Tổng sản phẩm</h3>
+                        <p class="stat-number">60</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Khách hàng</h3>
+                        <p class="stat-number">1,420</p>
+                    </div>
+                </div>
+
+                <div style="background:#fff; border-radius:8px; padding:20px; border:1px solid #e0e0e0; margin-top:20px;">
+                    <h3 style="font-size:15px; font-weight:bold; margin-bottom:15px;">Đơn hàng gần đây</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Mã ĐH</th>
+                                <th>Khách hàng</th>
+                                <th>Sản phẩm</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminOrdersTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="tab-orders" class="admin-tab-content">
+                <h2 style="font-size:18px; font-weight:bold; margin-bottom:20px;">QUẢN LÝ ĐƠN HÀNG</h2>
+                <div style="background:#fff; border-radius:8px; padding:20px; border:1px solid #e0e0e0;">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Mã ĐH</th>
+                                <th>Tên người nhận</th>
+                                <th>Số điện thoại</th>
+                                <th>Địa chỉ</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminOrdersTableFull"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="tab-products" class="admin-tab-content">
+                <h2 style="font-size:18px; font-weight:bold; margin-bottom:20px;">DANH SÁCH SẢN PHẨM HỆ THỐNG (60 Sản phẩm)</h2>
+                <p style="color:#666; font-size:13px;">Tất cả 60 sản phẩm thật đã được xác thực thông số và giá cả chuẩn xác.</p>
+            </div>
+
+            <div id="tab-users" class="admin-tab-content">
+                <h2 style="font-size:18px; font-weight:bold; margin-bottom:20px;">QUẢN LÝ KHÁCH HÀNG</h2>
+                <p style="color:#666; font-size:13px;">Danh sách tài khoản đã đăng ký trên hệ thống.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

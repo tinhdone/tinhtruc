@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - Thế Giới Di Động</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body onload="renderCart()">
+
+    <div class="top-banner-strip">
+        🔥 Siêu hội Laptop & Điện thoại - Giảm ngay đến 50% + Trả góp 0% qua MB Bank
+    </div>
+
+    <header>
+        <div class="container header-wrap">
+            <a href="index.html" class="logo-tgdd">
+                thegioididong <span>.com</span>
+            </a>
+
+            <div class="search-box-wrap">
+                <input type="text" id="searchInput" placeholder="Bạn tìm gì..." onkeyup="if(event.key === 'Enter') handleSearch()">
+                <button onclick="handleSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="header-links">
+                <a href="index.html" class="head-link-item">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Trang chủ</span>
+                </a>
+                <div id="authHeaderContainer">
+                    <a href="login.html" class="head-link-item" style="color:#d0021b;">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="margin-top: 20px;">
+        <h2 style="font-size:18px; font-weight:bold; color:#333; margin-bottom:15px; text-transform:uppercase; border-left:4px solid #d0021b; padding-left:10px;">
+            GIỎ HÀNG CỦA BẠN (<span id="cartItemCount">0</span> sản phẩm)
+        </h2>
+
+        <div class="cart-layout">
+            <div class="cart-items-box" id="cartItemsContainer"></div>
+
+            <div class="cart-summary-box">
+                <h3 style="font-size:15px; font-weight:bold; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:8px;">Cộng giỏ hàng</h3>
+                <div style="display:flex; justify-content:space-between; margin-bottom:10px; font-size:13px;">
+                    <span>Tạm tính:</span>
+                    <strong id="subtotalPrice" style="color:#333;">0₫</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-size:13px;">
+                    <span>Phí vận chuyển:</span>
+                    <strong style="color:#2e7d32;">Miễn phí toàn quốc</strong>
+                </div>
+                <hr style="border:0; border-top:1px dashed #ddd; margin-bottom:15px;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:20px; font-size:15px;">
+                    <span><b>Tổng tiền:</b></span>
+                    <strong id="totalPrice" style="color:#d0021b; font-size:20px;">0₫</strong>
+                </div>
+                <a href="checkout.html" class="btn-them-gio" style="display:block; text-align:center; padding:12px; font-size:14px; text-decoration:none; border-radius:4px;">
+                    TIẾN HÀNH THANH TOÁN
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-cols">
+                <div>
+                    <h4>Tổng đài hỗ trợ (Miễn phí)</h4>
+                    <ul>
+                        <li>Gọi mua: 1800.1060 (7:30 - 22:00)</li>
+                        <li>Khiếu nại: 1800.1062 (8:00 - 21:30)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Về công ty</h4>
+                    <ul>
+                        <li>Giới thiệu công ty (MWG.vn)</li>
+                        <li>Tuyển dụng làm việc</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Thông tin chính sách</h4>
+                    <ul>
+                        <li>Chính sách bảo hành</li>
+                        <li>Chính sách đổi trả</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Thanh toán hỗ trợ</h4>
+                    <ul>
+                        <li>Ngân hàng MB Bank (STK: 002603939)</li>
+                        <li>Ví điện tử VietQR 247</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                © 2026. Công ty cổ phần Thế Giới Di Động. GPĐKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2007.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
